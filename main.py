@@ -77,7 +77,7 @@ if __name__ == '__main__':
                   .join(sessions)
                   .where(exhibitions.name == 'The World of animals')).execute()
         for tuple in join_q:
-            print(tuple.session_id)
+            print(tuple.name, tuple.sessions.date_of_session, tuple.sessions.time_of_session)
         sessions.drop_table()
         exhibitions.drop_table()
 
